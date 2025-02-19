@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Mensajes</title>
+</head>
+<body>
+
+    <div class="div1">
+        <h1>Analizador de conversaciones </h1>
+    </div>
+    
+    
+    <div class="div2">
+        <h3>Subir el archivo exportado (.txt) </h3>
+        <input type="file" id="fileInput" accept=".txt">
+
+        <h3>Selecciona cantidad de palabras a mostrar</h3>
+        <label for="sliderGlobal">Palabras globales: </label>
+        <input type="range" id="sliderGlobal" min="1" max="100" value="10">
+        <span id="valorGlobal">10</span>
+        <div class="input-container">
+            <input type="number" id="inputGlobal" min="1" max="100" value="10">
+        </div>
+
+        <label for="sliderPersona">Palabras por persona: </label>
+        <input type="range" id="sliderPersona" min="1" max="100" value="5">
+        <span id="valorPersona">5</span>
+        <div class="input-container">
+            <input type="number" id="inputPersona" min="1" max="100" value="5">
+        </div>
+        
+        <h3>Filtros</h3>
+        <form id="categorias">
+            <div>
+                <input type="checkbox" id="categoria1" checked> pronombres, preposiciones, conjuciones
+            </div>
+            <div>
+                <input type="checkbox" id="categoria2" checked> abreviaciones comunes
+            </div>
+            <div>
+                <input type="checkbox" id="categoria3" checked> palabras comunes
+            </div>
+            <div>
+                <input type="checkbox" id="categoria4" checked> 500 palabras más usadas
+            </div>
+            
+        </form>
+    </div>
+
+    <div class="div3">
+        <div id="resultados"></div>
+        <div id="palabrasGlobales"></div>
+        <div id="palabrasPorPersona"></div>
+    </div>
+
+    <script src="palabras_comunes.js"></script>
+    <script src="procesar_texto.js"></script>
+</body>
+</html>
